@@ -22,7 +22,7 @@ module "k3d_cluster" {
   agent_count      = var.agent_count
 }
 
-  # create kubeconfig file and store path to var.kubeconfig
+# create kubeconfig file and store path to var.kubeconfig
 resource "null_resource" "kubeconfig" {
   for_each = toset(var.k3d_cluster_name)
   depends_on = [

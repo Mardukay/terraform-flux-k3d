@@ -1,18 +1,18 @@
 variable "k3d_cluster_name" {
-  default = ["flux"]
-  type    = list(string)
+  default     = ["flux"]
+  type        = list(string)
   description = "Cluster names in list"
 }
 
 variable "server_count" {
-  default = 1
-  type    = number
+  default     = 1
+  type        = number
   description = "Cluster servers count"
 }
 
 variable "agent_count" {
-  default = 0
-  type    = number
+  default     = 0
+  type        = number
   description = "Cluster nodes count"
 }
 
@@ -45,8 +45,8 @@ variable "target_path" {
 }
 
 variable "kubeconfig" {
-  default = ""
-  type    = string
+  default     = ""
+  type        = string
   description = "Kubeconfig path"
 }
 
