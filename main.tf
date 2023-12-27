@@ -22,17 +22,6 @@ module "k3d_cluster" {
   agent_count      = var.agent_count
 }
 
-# create kubeconfig file and store path to var.kubeconfig
-resource "null_resource" "kubeconfig" {
-  for_each = toset(var.k3d_cluster_name)
-  depends_on = [
-    module.k3d_cluster
-  ]
-  provisioner "local-exec" {
-    command = "export TF_VAR_kubeconfig=$(k3d kubeconfig write ${each.key})"
-  }
-}
-
 #deploy flux to cluster and connect to github repository
 provider "flux" {
   kubernetes = {
