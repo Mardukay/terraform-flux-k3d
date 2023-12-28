@@ -34,7 +34,7 @@ variable "FLUX_GITHUB_REPO" {
 
 variable "repository_visibility" {
   type        = string
-  default     = "public"
+  default     = "private"
   description = "The visibility of the GitOps repository"
 }
 
